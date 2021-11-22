@@ -178,9 +178,9 @@ public class MusicPlayer {
 
     public static boolean checkIfSongIsPresentInAPlaylist(String songName) {
         for (int i = 0; i < NamesOfPlaylist.playlists.size(); i++) {
-            for (int j = 0; j < NamesOfPlaylist.playlists.get(i).getPlaylist().size(); j++) {
-                if (NamesOfPlaylist.playlists.get(i).getPlaylist().get(j).equals(songName)) {
-                    System.out.println(songName + "was found in " + NamesOfPlaylist.playlists.get(i).getPlaylist().size() + "Playlist(s)");
+            for (int j = 0; j < NamesOfPlaylist.playlists.get(i).getSongList().size(); j++) {
+                if (NamesOfPlaylist.playlists.get(i).getSongList().get(j).equals(songName)) {
+                    System.out.println(songName + "was found in " + NamesOfPlaylist.playlists.get(i).getSongList().size() + "Playlist(s)");
                     return true;
                 }
             }
@@ -391,8 +391,7 @@ public class MusicPlayer {
 
 
     public static void seePlaylists(String playlistName) {
-        System.out.println(NamesOfPlaylist.findPlaylist(playlistName).getName());
-        if (NamesOfPlaylist.findPlaylist(playlistName).getPlaylist().size() == 0) {
+        if (NamesOfPlaylist.findPlaylist(playlistName).getSongList().size() == 0) {
             System.out.println("0 - Return to main menu");
             System.out.println("1 - Return to Playlists");
             System.out.println("2 - Add song to this playlist");
@@ -407,7 +406,7 @@ public class MusicPlayer {
                     System.out.println("Enter Song name");
                     sc.nextLine();
                     String title = sc.nextLine();
-                    NamesOfPlaylist.findPlaylist(playlistName).getPlaylist().add(SongList.findSong(title));
+                    NamesOfPlaylist.findPlaylist(playlistName).getSongList().add(SongList.findSong(title));
                     System.out.println("Song added to " + playlistName);
                     seePlaylists(playlistName);
                 default:
@@ -431,7 +430,7 @@ public class MusicPlayer {
                     System.out.println("Enter Song name");
                     sc.nextLine();
                     String title = sc.nextLine();
-                    NamesOfPlaylist.findPlaylist(playlistName).getPlaylist().add(SongList.findSong(title));
+                    NamesOfPlaylist.findPlaylist(playlistName).getSongList().add(SongList.findSong(title));
                     System.out.println("Song added to " + playlistName);
                     seePlaylists(playlistName);
                 case 3:

@@ -13,7 +13,6 @@ public class NamesOfPlaylist  {
             if(playlist.getName().equals(title)){
                 return playlist;
             }
-            return null;
         }
         return null;
     }
@@ -45,5 +44,6 @@ public class NamesOfPlaylist  {
         Playlist playlist = new Playlist();
         playlist.setNameOfPlaylist(name);
         playlists.add(playlist);
+        System.out.println(name + " created");
     }
 }
