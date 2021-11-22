@@ -1,11 +1,15 @@
 package com.myprograms;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class SongList {
-    static ArrayList<Song> songs= new ArrayList<>();
-    ArrayList<String> artistList = new ArrayList<>();
-    ArrayList<String> albumList = new ArrayList<>();
+    static List<Song> songs= new ArrayList<>();
+    List<String> artistList = new ArrayList<>();
+    List<String> albumList = new ArrayList<>();
     public static Song findSong(String title) {
         for (int i = 0; i < songs.size(); i++) {
             Song song = songs.get(i);
