@@ -1,8 +1,5 @@
 package com.myprograms;
 
-import javax.security.auth.kerberos.KerberosKey;
-import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Scanner;
 
 public class MusicPlayer {
@@ -465,7 +462,7 @@ public class MusicPlayer {
     }
 
     public static void removingSongFromPlaylist(String songName) {
-        Playlist.removeFromPlaylist(songName);
+        PlaylistUtil.removeFromPlaylist(songName);
         System.out.println(songName + " removed from playlist ");
     }
 }
